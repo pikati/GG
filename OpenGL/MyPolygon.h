@@ -4,7 +4,7 @@
 class MyPolygon
 {
 private:
-	Vector3 m_vertex[4];
+	Vertex2D m_vertex[4];
 	unsigned int m_texture;
 public:
 	void Initialize();
@@ -12,6 +12,6 @@ public:
 	void Draw();
 	void Finalize();
 
-	void SetVertex(Vector3* vec);
+	void SetVertex(Vertex2D* vec);
 };
 

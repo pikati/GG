@@ -38,9 +38,10 @@ void CRenderer::Init()
 	wglMakeCurrent(m_dc, m_rc);
 
 	glEnable(GL_CULL_FACE);
-	glEnable(GL_LIGHTING);
+	//glEnable(GL_LIGHTING);
 	glEnable(GL_NORMALIZE);
 	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_TEXTURE_2D);
 
 	glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 	

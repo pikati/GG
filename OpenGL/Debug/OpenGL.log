@@ -1,5 +1,2 @@
-﻿  manager.cpp
-  MyPolygon.cpp
-  texture.cpp
-  コードを生成中...
-  OpenGL.vcxproj -> D:\HAL\3\GameGraphics\OpenGL\Debug\OpenGL.exe
+﻿  MyPolygon.cpp
+  OpenGL.vcxproj -> D:\HAL\3\GameGraphics\GG\Debug\OpenGL.exe

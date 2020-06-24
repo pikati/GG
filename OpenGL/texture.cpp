@@ -6,7 +6,7 @@
 unsigned int LoadTexture( const char *FileName )
 {
 	unsigned int	texture;
-	unsigned char	header[18]; 
+	unsigned char	header[18];
 	unsigned char	*image;
 	FILE			*file;
 	unsigned int	width, height;

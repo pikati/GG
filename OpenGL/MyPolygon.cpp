@@ -5,7 +5,7 @@
 
 void MyPolygon::Initialize()
 {
-	m_texture = LoadTexture("Asset\\Texture\\exture.tga");
+	m_texture = LoadTexture("Asset\\Texture\\texture.tga");
 }
 
 void MyPolygon::Update()
@@ -15,7 +15,6 @@ void MyPolygon::Update()
 
 void MyPolygon::Draw()
 {
-
 	glMatrixMode(GL_PROJECTION);
 	glPushMatrix();
 	glLoadIdentity();
@@ -28,11 +27,11 @@ void MyPolygon::Draw()
 	glBindTexture(GL_TEXTURE_2D, m_texture);
 	glBegin(GL_TRIANGLE_STRIP);
 
-	glColor3f(0, 0, 1);
-
 	for (int i = 0; i < 4; i++)
 	{
-		glVertex3f(m_vertex[i].x, m_vertex[i].y, m_vertex[i].z);
+		glTexCoord2f(m_vertex[i].coordinate.x, m_vertex[i].coordinate.y);
+		glColor4f(m_vertex[i].color.x, m_vertex[i].color.y, m_vertex[i].color.z, m_vertex[i].color.w);
+		glVertex3f(m_vertex[i].position.x, m_vertex[i].position.y, m_vertex[i].position.z);
 	}
 	glEnd();
 	glBindTexture(GL_TEXTURE_2D, NULL);
@@ -48,7 +47,7 @@ void MyPolygon::Finalize()
 	UnloadTexture(m_texture);
 }
 
-void MyPolygon::SetVertex(Vector3 vec[4])
+void MyPolygon::SetVertex(Vertex2D vec[4])
 {
 	m_vertex[0] = vec[0];
 	m_vertex[1] = vec[1];
