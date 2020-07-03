@@ -4,11 +4,13 @@
 #include "renderer.h"
 #include "MyPolygon.h"
 #include "Field.h"
+#include "Cube.h"
 #include "Camera.h"
 
 MyPolygon* g_polygon;
 Field* g_field;
 Camera* g_camera;
+Cube* g_cube;
 
 void CManager::Init()
 {
@@ -20,6 +22,9 @@ void CManager::Init()
 	g_field->Initialize();
 	g_camera = new Camera();
 	g_camera->Initialize();
+	g_cube = new Cube();
+	g_cube->Initialize();
+	g_cube->CreateCube();
 
 	Vertex2D ver[4];
 	ver[0].position = Vector3(100.f, 100.0f, 0);
@@ -43,6 +48,8 @@ void CManager::Init()
 
 void CManager::Uninit()
 {
+	g_cube->Finalize();
+	delete g_cube;
 	g_camera->Finalize();
 	delete g_camera;
 	g_field->Finalize();
@@ -56,6 +63,7 @@ void CManager::Update()
 {
 	g_camera->Update();
 	g_field->Update();
+	g_cube->Update();
 }
 
 void CManager::Draw()
@@ -63,8 +71,9 @@ void CManager::Draw()
 	CRenderer::Begin();
 
 	g_camera->Draw();
+	//g_polygon->Draw();
 	g_field->Draw();
-	g_polygon->Draw();
+	g_cube->Draw();
 
 	
 	CRenderer::End();

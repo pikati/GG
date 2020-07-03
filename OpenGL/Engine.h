@@ -72,6 +72,7 @@ public:
 struct Vertex2D
 {
 	Vector3 position;
+	Vector3 normal;
 	Vector2 coordinate;
 	Vector4 color;
 };

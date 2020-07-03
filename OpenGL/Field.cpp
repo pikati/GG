@@ -4,12 +4,12 @@
 
 void Field::Initialize()
 {
-	m_texture = LoadTexture("Asset\\Texture\\texture.tga");
+	m_texture = LoadTexture("Asset\\Texture\\koyorichan.tga");
 }
 
 void Field::Update()
 {
-	UnloadTexture(m_texture);
+	
 }
 
 void Field::Draw()
@@ -54,5 +54,5 @@ void Field::Draw()
 
 void Field::Finalize()
 {
-
+	UnloadTexture(m_texture);
 }

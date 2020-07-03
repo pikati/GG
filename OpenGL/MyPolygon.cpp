@@ -1,11 +1,10 @@
 #include "MyPolygon.h"
 #include "texture.h"
 #include "main.h"
-#include <iostream>
 
 void MyPolygon::Initialize()
 {
-	m_texture = LoadTexture("Asset\\Texture\\texture.tga");
+	m_texture = LoadTexture("Asset\\Texture\\koyorichan.tga");
 }
 
 void MyPolygon::Update()
@@ -28,12 +27,14 @@ void MyPolygon::Draw()
 	glBindTexture(GL_TEXTURE_2D, m_texture);
 
 	glBegin(GL_TRIANGLE_STRIP);
+
 	for (int i = 0; i < 4; i++)
 	{
 		glTexCoord2f(m_vertex[i].coordinate.x, m_vertex[i].coordinate.y);
 		glColor4f(m_vertex[i].color.x, m_vertex[i].color.y, m_vertex[i].color.z, m_vertex[i].color.w);
 		glVertex3f(m_vertex[i].position.x, m_vertex[i].position.y, m_vertex[i].position.z);
 	}
+
 	glEnd();
 
 	glBindTexture(GL_TEXTURE_2D, NULL);
